@@ -1,5 +1,4 @@
 ﻿@inject HttpClient Http
-
 <ul class="list-unstyled">
     @foreach (var Product in Products)
     {
@@ -23,7 +22,6 @@
     }
     </ul>
 
-
 @code {
 
     private static List<Product> Products = new List<Product>
@@ -32,7 +30,7 @@
         {
             var result = await Http.GetFromJsonAsync<List<Product>>("api/Product");
             if (result != null)
-                Products = result;
+            Products = result;
         }
     }
 }
